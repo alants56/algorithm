@@ -8,20 +8,8 @@ def load_data() :
         m1 = file1.readlines()
     with open('m2.txt', 'r') as file2:
         m2 = file2.readlines()
-    d1 = []
-    for m in m1 :
-        a = m.split()
-        d = []
-        for x in a :
-            d.append(int(x))
-        d1.append(d)
-    d2 = []
-    for m in m2 :
-        a = m.split()
-        d = []
-        for x in a :
-            d.append(int(x))
-        d2.append(d)
+    d1 = [list(map(int, x.split())) for x in m1]
+    d2 = [list(map(int, x.split())) for x in m2]
     return d1,d2
 
 
